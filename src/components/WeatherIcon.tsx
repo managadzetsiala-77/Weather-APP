@@ -24,10 +24,16 @@ export default function WeatherIcon({ weather_code }: WeatcherCode) {
     weather_code === 86
   ) {
     imageName = "icon-snow.webp";
-  } else if (weather_code === 95 || weather_code === 96 || weather_code === 99) {
+  } else if (
+    weather_code === 95 ||
+    weather_code === 96 ||
+    weather_code === 99
+  ) {
     imageName = "icon-storm.webp";
   }
 
   // Returns the actual image element
-  return <img src={`/images/${imageName}`} alt="Current Weather" className="weather-icon" />;
+  return (
+    <img className="w-20 h-20 object-contain" src={`/images/${imageName}`} alt="Current Weather" />
+  );
 }
