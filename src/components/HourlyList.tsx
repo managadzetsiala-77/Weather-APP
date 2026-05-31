@@ -9,10 +9,16 @@ export default function HourlyList({ weather }: { weather: Weather | null }) {
   );
 
   return (
-    <div className="bg-gray-800 w-full h-213 overflow-y-scroll scrollbar-thin scrollbar-thumb-[#3D3F67] scrollbar-track-transparent p-4 rounded-2xl">
-      <div className="flex items-center mb-4 gap-25 w-95 ">
+    <div className="bg-[#24243D] w-full h-175 overflow-y-auto scrollbar-thin scrollbar-thumb-[#3D3F67] scrollbar-track-transparent p-5 rounded-3xl">
+      <div className="flex items-center mb-4 gap-15 w-95 ">
         <h2>Hourly forecast</h2>
-        <select onChange={(e) => setWeekDay(e.target.value)} className="bg-gray-700 py-2 px-3">
+        <select onChange={(e) => setWeekDay(e.target.value)}className="
+bg-[#3B3B55]
+rounded-lg
+px-3
+py-2
+outline-none
+">
           {weather?.daily?.time.map((day: string) => {
             return (
               <option className="text-black" key={day} value={day.substring(8)}>
@@ -22,12 +28,27 @@ export default function HourlyList({ weather }: { weather: Weather | null }) {
           })}
         </select>
       </div>
+      {!weather ? (
+  <div className="flex flex-col gap-4">
+    {[1,2,3,4,5,6,7].map(i=>(
+      <div
+        key={i}
+        className="
+        h-12
+        rounded-xl
+        bg-[#34344F]
+        animate-pulse
+        "
+      />
+    ))}
+  </div>
+) : (
 
       <section className=" flex flex-col gap-4">
         {weather?.hourly.time.map((item: string, i: number) => {
           if (item.substring(8).startsWith(weekDay)) {
             return (
-              <div key={item} className="h-16 flex items-center justify-between bg-gray-700 rounded-2xl px-4 ">
+              <div key={item} className="h-16 flex items-center justify-between bg-[#34344F] rounded-xl px-4 ">
                 <div className="flex items-center gap-2">
                   <WeatherIcon weather_code={weather?.hourly.weather_code[i]} />
                   <p>{item.substring(11)}</p>
@@ -39,6 +60,7 @@ export default function HourlyList({ weather }: { weather: Weather | null }) {
           }
         })}
       </section>
+)}
     </div>
   );
 }

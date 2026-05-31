@@ -2,9 +2,34 @@ import type { Weather } from "../types/weather.types";
 import TodaysCard from "./TodaysCard";
 
 export default function TodaysList({weather, windSpeed}: {weather: Weather | null; windSpeed: string}) {
+
+  // if (!weather) {
+  //   return (
+  //     <div className="grid grid-cols-4 gap-5 mt-8">
+  //       {[1, 2, 3, 4].map((item) => (
+  //         <div
+  //           key={item}
+  //           className="
+  //             h-22.5
+  //             rounded-2xl
+  //             bg-[#24243D]
+  //             animate-pulse
+  //           "
+            
+  //         />
+  //       ))}
+        
+  //     </div>
+  //   );
+  // }
+
   return (
-       <div className="flex w-full gap-5 mt-8">
-  <TodaysCard>
+    <div className="
+grid
+grid-cols-4
+gap-4
+mt-8
+">  <TodaysCard>
         <h2>fills like: </h2>
         <h2>{weather?.current?.apparent_temperature.toFixed()} °</h2>
       </TodaysCard>

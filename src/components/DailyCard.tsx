@@ -12,7 +12,7 @@ export default function DailyCard({
   i: number;
 }) {
   return (
-    <div className="w-30 h-50 flex flex-col items-center bg-gray-800 rounded-2xl mt-5 py-3">
+    <div className="w-28 h-48 flex flex-col items-center justify-between bg-[#24243D] rounded-2xl mt-5 py-4">
       <h2>{getDay(date).substring(0, 3)}</h2>
       <WeatherIcon weather_code={weather?.daily.weather_code[i]} />
       <div className="flex items-center gap-9 ">

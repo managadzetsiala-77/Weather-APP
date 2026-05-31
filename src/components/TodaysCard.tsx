@@ -2,6 +2,16 @@ import React from "react"
 
 export default function TodaysCard({children}: {children:React.ReactNode}) {
   return (
-    <div className="w-[25%] flex flex-col items-start justify-center p-5 rounded-2xl h-30 bg-gray-800">{children}</div>
+    <div className="
+w-full
+h-[110px]
+flex
+flex-col
+justify-center
+gap-3
+p-6
+rounded-2xl
+bg-[#24243D]
+">{children}</div>
   )
 }

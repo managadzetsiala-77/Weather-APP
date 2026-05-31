@@ -31,11 +31,26 @@ export default function SearchBar({ setCity, setWeather }: SearchBarProps) {
 
   return (
     <div>
-      <form className="flex gap-3 justify-center mb-10" onSubmit={(e) => handleSubmit(e, cityName)}>
-        <label className="flex  gap-2 px-4 py-3 rounded bg-gray-800 w-[30%]" htmlFor="cityName">
+      <form
+        className="flex gap-3 justify-center mb-12"
+        onSubmit={(e) => handleSubmit(e, cityName)}
+      >
+        <label
+          className="flex items-center
+gap-3
+bg-[#24243D]
+px-5
+py-4
+rounded-xl
+w-125"
+          htmlFor="cityName"
+        >
           <img src="/images/icon-search.svg" alt="icon search" />
           <input
-            className="outline-0 w-full"
+            className="bg-transparent
+            outline-none
+            w-full
+            text-white"
             placeholder="Search for a place..."
             id="cityName"
             type="text"
@@ -44,7 +59,14 @@ export default function SearchBar({ setCity, setWeather }: SearchBarProps) {
           />
         </label>
 
-        <button className="bg-blue-800 px-5 rounded leading-0" type="submit">
+        <button
+          className="bg-[#4E5CF0]
+px-6
+rounded-xl
+hover:bg-[#5d6cff]
+transition"
+          type="submit"
+        >
           Search
         </button>
       </form>

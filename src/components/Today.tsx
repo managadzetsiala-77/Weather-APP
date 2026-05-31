@@ -4,8 +4,18 @@ import WeatherIcon from "./WeatherIcon";
 
 const Today = ({ city, weather }: { city: City | null; weather: Weather | null }) => {
   return (
-    <div className="w-full  h-80 flex items-center justify-between px-5 rounded-[55px] bg-cover bg-[url(/images/bg-today-large.svg)]">
-      
+    <div className="
+w-full
+h-59
+flex
+justify-between
+items-center
+px-8
+rounded-3xl
+bg-cover
+bg-center
+bg-[url('/images/bg-today-large.svg')]
+">      
       <div className="flex flex-col gap-2 ">
         <h2 className="text-3xl font-bold">{city?.name},  {city?.country} </h2>
      
